@@ -6,7 +6,7 @@ This class was created because I wasn't satisfied with standard Apple AVPlayer d
 
 ![AKVideoImageView Example](Resources/example.gif)
 
-##Features
+## Features
 
 - Ability to dynamically switch videos
 - Auto set the first frame of video to have seamless transition when app returns from background
@@ -15,12 +15,12 @@ This class was created because I wasn't satisfied with standard Apple AVPlayer d
 - Ability to use mp4 files as video source
 
 
-##Installation
+## Installation
 
-####Manually
+#### Manually
 Just add AKVideoImageView.h and AKVideoImageView.m files to your project.
 
-####CocoaPods
+#### CocoaPods
 Add the following line to your Podfile.
 
 ```
@@ -29,15 +29,15 @@ pod "AKVideoImageView", "~> 1.0"
 
 Then run `pod install`.
 
-##Usage
+## Usage
 
-###Compressing your video file
+### Compressing your video file
 Before starting using this class, you need to properly compress video.<br /> Here is an example of libx264 compression options on OS X system using ffmpeg utility:
 <br />ffmpeg -i input.mov -vcodec libx264 -level 3.1 -pix_fmt yuv420p -threads 1 -preset placebo -crf 19 -tune film -x264opts colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off output.mp4
 
-###Basic Setup
+### Basic Setup
 
-In your view controller:<br />
+Objective-C:<br />
 ```objective-c
 #import "AKVideoImageView.h"
 
@@ -48,7 +48,16 @@ AKVideoImageView *videoBG = [[AKVideoImageView alloc] initWithFrame:self.view.bo
 [self.view sendSubviewToBack:videoBG];
 ```
 
-###Dynamically changing video
+Swift:<br />
+```swift
+import AKVideoImageView
+
+let url = Bundle.main.url(forResource: "video_1", withExtension: "mp4")!
+let videoView = AKVideoImageView(frame: view.bounds, videoURL: url)!
+view.addSubview(videoView)
+```
+
+### Dynamically changing video
 
 ```objective-c
 NSURL *videoURL = [[NSBundle mainBundle] URLForResource:@"anotherVideoName" withExtension:@"mp4"];
@@ -56,7 +65,7 @@ self.videoBG.videoURL = videoURL;
 ```
 
 
-##License (MIT)
+## License (MIT)
 
 Copyright (c) 2015 Oleksandr Kirichenko
 
