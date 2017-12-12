@@ -1,6 +1,7 @@
 # AKVideoImageView
 ![Platform](https://img.shields.io/cocoapods/p/AKVideoImageView.svg)
 ![CocoaPods](https://img.shields.io/cocoapods/l/AKVideoImageView.svg)
+[![Build Status](https://travis-ci.org/numen31337/AKVideoImageView.svg?branch=master)](https://travis-ci.org/numen31337/AKVideoImageView)
 
 ## Motivation
 
