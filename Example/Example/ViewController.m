@@ -38,10 +38,19 @@ NSString *const kSecondVideoName = @"video_2";
     videoBG.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self.view addConstraint:[self constraintWitItem:videoBG attribute:NSLayoutAttributeBottom]];
-    [self.view addConstraint:[self constraintWitItem:videoBG attribute:NSLayoutAttributeTop]];
     [self.view addConstraint:[self constraintWitItem:videoBG attribute:NSLayoutAttributeLeft]];
     [self.view addConstraint:[self constraintWitItem:videoBG attribute:NSLayoutAttributeRight]];
-    
+	
+	CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+	NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:videoBG
+																	 attribute:NSLayoutAttributeTop
+																	 relatedBy:NSLayoutRelationEqual
+																		toItem:self.view
+																	 attribute:NSLayoutAttributeTop
+																	multiplier:1.0
+																	  constant:screenHeight * 0.3];
+	[self.view addConstraint:topConstraint];
+	
     self.videoBG = videoBG;
 }
 

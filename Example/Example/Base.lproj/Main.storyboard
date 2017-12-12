@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAF-3c-wMb">
-                                <rect key="frame" x="128" y="315.5" width="118" height="36"/>
+                                <rect key="frame" x="130" y="315.5" width="114" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Switch Video">
@@ -33,11 +34,21 @@
                                     <action selector="switchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pbl-SU-qe1"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mLJ-yd-Kgg" customClass="AKVideoImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="videoFileName" value="video_2"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mLJ-yd-Kgg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="96q-9x-TtX"/>
+                            <constraint firstItem="mLJ-yd-Kgg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ady-vU-XOJ"/>
                             <constraint firstItem="eAF-3c-wMb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hEF-cU-bVR"/>
                             <constraint firstItem="eAF-3c-wMb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iPX-9q-bvc"/>
+                            <constraint firstAttribute="trailing" secondItem="mLJ-yd-Kgg" secondAttribute="trailing" id="qMd-7n-qG0"/>
+                            <constraint firstItem="mLJ-yd-Kgg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="tNW-JV-YeC"/>
                         </constraints>
                     </view>
                 </viewController>

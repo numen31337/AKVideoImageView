@@ -8,6 +8,7 @@
 #import "AKVideoImageView.h"
 @import AVFoundation;
 
+IB_DESIGNABLE
 @interface AKVideoImageView()
 
 @property (strong) AVAssetReader *reader;
@@ -19,10 +20,20 @@
 @property (assign) BOOL stopAnimation;
 @property (assign) BOOL newVideoAvalilible;
 
+///The property used for storyboard support only
+@property (retain, nonatomic) IBInspectable NSString *videoFileName;
+
 @end
 
 
 @implementation AKVideoImageView
+
+- (void)prepareForInterfaceBuilder
+{
+	[super prepareForInterfaceBuilder];
+	
+	if (self.videoURL) { [self showFirstFrame]; }
+}
 
 - (nullable instancetype)initWithFrame:(CGRect)frame videoURL:(nonnull NSURL *)videoURL
 {
@@ -57,7 +68,23 @@
 
 - (void)didMoveToSuperview
 {
-    [self playVideo];
+	[super didMoveToSuperview];
+	
+	if (self.videoURL) { [self playVideo]; }
+}
+
+///The property used for storyboard support only
+- (void)setVideoFileName:(NSString *)videoFileName
+{
+	if (videoFileName == _videoFileName) { return; }
+	
+	_videoFileName = videoFileName;
+	NSURL *videoFileURL = [[NSBundle bundleForClass:[self class]] URLForResource:videoFileName withExtension:@"mp4"];
+	self.videoURL = videoFileURL;
+	
+#if !TARGET_INTERFACE_BUILDER
+	[self playVideo];
+#endif
 }
 
 - (void)setVideoURL:(nonnull NSURL *)videoURL
@@ -167,7 +194,7 @@
     }
 }
 
-//this method implementation taken from Apple responce here: https://developer.apple.com/library/ios/qa/qa1702/_index.html
+//This method implementation is taken from Apple response here: https://developer.apple.com/library/ios/qa/qa1702/_index.html
 - (CGImageRef)imageFromSampleBuffer:(CMSampleBufferRef)sampleBuffer
 {
     // Get a CMSampleBuffer's Core Video image buffer for the media data
