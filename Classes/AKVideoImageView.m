@@ -8,7 +8,6 @@
 #import "AKVideoImageView.h"
 @import AVFoundation;
 
-IB_DESIGNABLE
 @interface AKVideoImageView()
 
 @property (strong) AVAssetReader *reader;
@@ -27,13 +26,6 @@ IB_DESIGNABLE
 
 
 @implementation AKVideoImageView
-
-- (void)prepareForInterfaceBuilder
-{
-	[super prepareForInterfaceBuilder];
-	
-	if (self.videoURL) { [self showFirstFrame]; }
-}
 
 - (nullable instancetype)initWithFrame:(CGRect)frame videoURL:(nonnull NSURL *)videoURL
 {
@@ -82,9 +74,7 @@ IB_DESIGNABLE
 	NSURL *videoFileURL = [[NSBundle bundleForClass:[self class]] URLForResource:videoFileName withExtension:@"mp4"];
 	self.videoURL = videoFileURL;
 	
-#if !TARGET_INTERFACE_BUILDER
 	[self playVideo];
-#endif
 }
 
 - (void)setVideoURL:(nonnull NSURL *)videoURL
