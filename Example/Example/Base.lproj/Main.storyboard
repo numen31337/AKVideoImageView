@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAF-3c-wMb">
-                                <rect key="frame" x="130" y="315.5" width="114" height="36"/>
+                                <rect key="frame" x="130.5" y="615" width="114" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Switch Video">
@@ -35,25 +36,53 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mLJ-yd-Kgg" customClass="AKVideoImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="200"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="videoFileName" value="video_2"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using Interface Builder:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqU-FI-Vvc">
+                                <rect key="frame" x="16" y="36" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ciS-sK-8gb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using Code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAv-zm-OGZ">
+                                <rect key="frame" x="16" y="281" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="yID-7w-o6L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mLJ-yd-Kgg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="96q-9x-TtX"/>
+                            <constraint firstItem="OAv-zm-OGZ" firstAttribute="top" secondItem="mLJ-yd-Kgg" secondAttribute="bottom" constant="16" id="5zE-29-quL"/>
+                            <constraint firstItem="vqU-FI-Vvc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="74m-on-9N5"/>
+                            <constraint firstItem="OAv-zm-OGZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DNi-kr-M4n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OAv-zm-OGZ" secondAttribute="trailing" id="OMT-5f-njH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eAF-3c-wMb" secondAttribute="bottom" constant="16" id="Yup-W1-J35"/>
                             <constraint firstItem="mLJ-yd-Kgg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ady-vU-XOJ"/>
-                            <constraint firstItem="eAF-3c-wMb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hEF-cU-bVR"/>
+                            <constraint firstItem="vqU-FI-Vvc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="anl-Yz-kir"/>
+                            <constraint firstItem="mLJ-yd-Kgg" firstAttribute="top" secondItem="vqU-FI-Vvc" secondAttribute="bottom" constant="8" id="dj7-Ls-Z82"/>
                             <constraint firstItem="eAF-3c-wMb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iPX-9q-bvc"/>
                             <constraint firstAttribute="trailing" secondItem="mLJ-yd-Kgg" secondAttribute="trailing" id="qMd-7n-qG0"/>
                             <constraint firstItem="mLJ-yd-Kgg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="tNW-JV-YeC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vqU-FI-Vvc" secondAttribute="trailing" id="u1x-xi-Q9b"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="usingCodeLabel" destination="OAv-zm-OGZ" id="sgG-YD-7Am"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>

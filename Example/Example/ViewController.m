@@ -15,16 +15,12 @@ NSString *const kSecondVideoName = @"video_2";
 @interface ViewController()
 
 @property (weak, nonatomic) AKVideoImageView *videoBG;
+@property (weak, nonatomic) IBOutlet UILabel *usingCodeLabel;
 
 @end
 
 
 @implementation ViewController
-
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
 
 - (void)viewDidLoad
 {
@@ -40,15 +36,13 @@ NSString *const kSecondVideoName = @"video_2";
     [self.view addConstraint:[self constraintWitItem:videoBG attribute:NSLayoutAttributeBottom]];
     [self.view addConstraint:[self constraintWitItem:videoBG attribute:NSLayoutAttributeLeft]];
     [self.view addConstraint:[self constraintWitItem:videoBG attribute:NSLayoutAttributeRight]];
-	
-	CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
 	NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:videoBG
 																	 attribute:NSLayoutAttributeTop
 																	 relatedBy:NSLayoutRelationEqual
-																		toItem:self.view
-																	 attribute:NSLayoutAttributeTop
+																		toItem:self.usingCodeLabel
+																	 attribute:NSLayoutAttributeBottom
 																	multiplier:1.0
-																	  constant:screenHeight * 0.3];
+																	  constant:8.0];
 	[self.view addConstraint:topConstraint];
 	
     self.videoBG = videoBG;
