@@ -1,11 +1,10 @@
 # AKVideoImageView
 ![Platform](https://img.shields.io/cocoapods/p/AKVideoImageView.svg)
 ![CocoaPods](https://img.shields.io/cocoapods/l/AKVideoImageView.svg)
-[![Build Status](https://travis-ci.org/numen31337/AKVideoImageView.svg?branch=master)](https://travis-ci.org/numen31337/AKVideoImageView)
 
 ## Motivation
 
-AKVideoImageView was created because I wasn't satisfied with standard Apple AVPlayer during creating a video background for one of my apps. AVPlayer doesn't let the phone to go to sleep mode. Also, you can't insensibly start a video from the first frame when app enters background. This class solves these problems, and in the end, you have a perfect solution for making gorgeous video backgrounds for your apps.
+AKVideoImageView was created because I wasn't satisfied with the standard AVPlayer when I was implementing a video background for one of my apps. The main issue is that AVPlayer doesn't let the phone go to sleep mode. Additionally, you can't insensibly start the video from the first frame when the app enters the background. This class solves these problems and has a less noticeable lag when switching from the last to the first frame of the video.
 
 ![AKVideoImageView Example](Resources/example.gif)
 
@@ -13,22 +12,22 @@ AKVideoImageView was created because I wasn't satisfied with standard Apple AVPl
 
 - Allows the phone to go to the sleep mode
 - Ability to dynamically switch videos
-- Auto set the first frame of video to have seamless transition when app returns from background
+- Automatically switches to the first frame of video to have a seamless transition when the app returns from the background
 - Minimal memory footprint
 - Good performance
-- Ability to use mp4 files as video source
+- Ability to use mp4 files as the video source
 - Interface Builder support
 
 ## Usage
 
 ### Compressing your video file
-Before starting using this class, you need to properly compress video.<br /> Here is an example of libx264 compression options on OS X system using ffmpeg utility:
+Before starting using this class, you need to properly compress the video.<br /> Here is an example of libx264 compression options on OS X system using FFmpeg utility:
 ```
 ffmpeg -i input.mov -vcodec libx264 -level 3.1 -pix_fmt yuv420p -threads 1 -preset placebo -crf 19 -tune film -x264opts colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off output.mp4
 ```
 
 ### Using Interface Builder
-Just drag the `UIImageView` to your `UIView` and set its class to the `AKVideoImageView`. In the Attributes Inspector set the `Video File Name` to the name of your `.mp4` video file without extension. See an example project for more info is needed.
+Just drag the `UIImageView` to your `UIView` and set its class to the `AKVideoImageView`. In the Attributes Inspector set the `Video File Name` to the name of your `.mp4` video file without extension. See an example project for more info if needed.
 
 ### Using Code
 

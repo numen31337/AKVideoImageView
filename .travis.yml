@@ -1,5 +1,0 @@
-osx_image: xcode9.2
-language: objective-c
-xcode_sdk: iphonesimulator
-
-script: xcodebuild build -project Example/Example.xcodeproj -scheme Example CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
