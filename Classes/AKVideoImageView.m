@@ -71,7 +71,7 @@
 	if (videoFileName == _videoFileName) { return; }
 	
 	_videoFileName = videoFileName;
-	NSURL *videoFileURL = [[NSBundle bundleForClass:[self class]] URLForResource:videoFileName withExtension:@"mp4"];
+	NSURL *videoFileURL = [[NSBundle mainBundle] URLForResource:videoFileName withExtension:@"mp4"];
 	self.videoURL = videoFileURL;
 	
 	[self playVideo];

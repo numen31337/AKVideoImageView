@@ -1,0 +1,7 @@
+platform :ios, '7.1'
+
+target 'Example' do
+  use_frameworks!
+
+  pod 'AKVideoImageView', :path => '../'
+end

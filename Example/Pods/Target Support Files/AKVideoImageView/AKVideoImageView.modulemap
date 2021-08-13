@@ -1,0 +1,6 @@
+framework module AKVideoImageView {
+  umbrella header "AKVideoImageView-umbrella.h"
+
+  export *
+  module * { export * }
+}

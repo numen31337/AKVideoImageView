@@ -1,0 +1,16 @@
+PODS:
+  - AKVideoImageView (1.1.3)
+
+DEPENDENCIES:
+  - AKVideoImageView (from `../`)
+
+EXTERNAL SOURCES:
+  AKVideoImageView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AKVideoImageView: e743ddbc63aac81951be3cc657716e573aa0c563
+
+PODFILE CHECKSUM: 1085f01b5062023af2422d51e0c885c931d1bd54
+
+COCOAPODS: 1.10.2

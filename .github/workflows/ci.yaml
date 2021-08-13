@@ -1,0 +1,27 @@
+name: Build Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    timeout-minutes: 30
+    runs-on: [macOS]
+
+    steps:
+    - name: System Info
+      run: |
+        echo "### System:" && sw_vers
+        echo "### Xcode:" && xcodebuild -version
+        echo "### CocoaPods:" && pod --version
+    - uses: actions/checkout@v2
+    
+    - name: Pod install
+      run: cd Example && pod install
+    
+    - name: Build
+      run: cd Example && xcodebuild clean build -workspace Example.xcworkspace -scheme Example CODE_SIGNING_ALLOWED="NO"

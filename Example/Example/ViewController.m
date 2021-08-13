@@ -6,8 +6,9 @@
 //  Copyright © 2015 Oleksandr Kirichenko. All rights reserved.
 //
 
+@import AKVideoImageView;
+
 #import "ViewController.h"
-#import "AKVideoImageView.h"
 
 NSString *const kFirstVideoName = @"video_1";
 NSString *const kSecondVideoName = @"video_2";
