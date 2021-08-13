@@ -10,7 +10,7 @@ on:
 jobs:
   test:
     timeout-minutes: 30
-    runs-on: [macOS]
+    runs-on: macos-latest
 
     steps:
     - name: System Info
