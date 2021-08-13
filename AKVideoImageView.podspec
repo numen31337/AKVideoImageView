@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name           = "AKVideoImageView"
-  s.version        = "1.1.3"
+  s.version        = "1.1.4"
   s.summary        = "UIImageView subclass for displaying looped videos"
   s.description    = "UIImageView subclass that allows you to display a looped video and dynamically switch it"
   s.homepage       = "https://github.com/numen31337/AKVideoImageView"

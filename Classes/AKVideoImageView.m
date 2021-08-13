@@ -223,11 +223,17 @@
 {
     NSCParameterAssert([self.videoURL isKindOfClass:[NSURL class]]);
     
-    UIImage *firstFrameUIImage = [self thumbnailImageForVideo:self.videoURL atTime:0];
+    UIImage *firstFrameUIImage = [[self class] firstFrameImageForVideo:self.videoURL];
     self.image = firstFrameUIImage;
 }
 
-- (nullable UIImage *)thumbnailImageForVideo:(nonnull NSURL *)videoURL
++ (nullable UIImage *)firstFrameImageForVideo:(nonnull NSURL *)videoURL {
+    NSCParameterAssert([videoURL isKindOfClass:[NSURL class]]);
+    
+    return [[self class] thumbnailImageForVideo:videoURL atTime:0];
+}
+
++ (nullable UIImage *)thumbnailImageForVideo:(nonnull NSURL *)videoURL
                                       atTime:(NSTimeInterval)time
 {
     NSCParameterAssert([videoURL isKindOfClass:[NSURL class]]);

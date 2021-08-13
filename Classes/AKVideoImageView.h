@@ -26,4 +26,7 @@
 - (nullable instancetype)initWithFrame:(CGRect)frame
                               videoURL:(nonnull NSURL *)videoURL NS_DESIGNATED_INITIALIZER;
 
+/** Returns the first frame of the video as a UIImage */
++ (nullable UIImage *)firstFrameImageForVideo:(nonnull NSURL *)videoURL;
+
 @end
