@@ -1,4 +1,5 @@
 # AKVideoImageView
+[![Build Test](https://github.com/numen31337/AKVideoImageView/actions/workflows/ci.yaml/badge.svg)](https://github.com/numen31337/AKVideoImageView/actions/workflows/ci.yaml)
 ![Platform](https://img.shields.io/cocoapods/p/AKVideoImageView.svg)
 ![CocoaPods](https://img.shields.io/cocoapods/l/AKVideoImageView.svg)
 
